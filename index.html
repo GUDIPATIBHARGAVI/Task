@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Up</title>
+    <style>
+      body {
+        background-color: rgb(55, 57, 57);
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      header .left {
+        font-size: 36px;
+        padding-left: 50px;
+      }
+
+      header .right {
+        text-align: right;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .left-column {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .left-column h1 {
+        margin-top: 0;
+        font-size: 100px;
+        margin: 0;
+      }
+
+      .color {
+        color: rgb(0, 255, 208);
+      }
+
+      .left-column p {
+        font-size: 30px;
+      }
+
+      .left-column h3 {
+        font-size: 50px;
+        margin: 0;
+      }
+
+      .left-column img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+
+      .left-column button {
+        background-color: rgb(0, 255, 208);
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .right-column {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .right-column h6 {
+        font-size: 18px;
+      }
+
+      .right-column img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .slideshow-container {
+        max-width: 500px;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 24px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <h5 class="color">Skill Up</h5>
+      </div>
+      <nav class="right">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Community</a>
+        <a href="#">Support</a>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="left-column">
+        <h1><span class="color">Skill</span> Mastery</h1>
+        <p>
+          Unlock the World of
+          <span class="color"
+            >Free <br />
+            Resources and Courses</span
+          >
+        </p>
+        <br />
+        <h3><span class="color">Special</span> Courses To Learn</h3>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+          <!-- Slides -->
+          <div class="mySlides">
+            <img
+              src="Course1.png"
+              alt="Slide 1"
+              style="width: 100%; height: auto"
+            />
+          </div>
+
+          <div class="mySlides">
+            <img
+              src="Course2.jpeg"
+              alt="Slide 2"
+              style="width: 100%; height: auto"
+            />
+          </div>
+
+          <div class="mySlides">
+            <img
+              src="Course3.jpeg"
+              alt="Slide 3"
+              style="width: 100%; height: auto"
+            />
+          </div>
+
+          <!-- Previous and next buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <button id="beginButton" onclick="beginCourse()">Let's Begin</button>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <h6>From Humble Beginning To Great Achievements</h6>
+        <img
+          src="GirlWorking.jpg"
+          width="500px"
+          height="500px"
+          alt="Humble Being"
+        />
+      </div>
+    </div>
+
+    <script>
+      // Slideshow script
+      var slideIndex = 1;
+
+      function showSlides(n) {
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      // Initial display
+      showSlides(slideIndex);
+    </script>
+  </body>
+</html>
